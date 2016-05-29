@@ -67,16 +67,16 @@ def to_morse(s):
 
 def to_beaud(s, hyphen="-"):
     """Translate from morse to beaud"""
-    r = s.replace("-", "beau"+hyphen)  \
-        .replace(".", "be"+hyphen)     \
-        .replace("/", "")        \
+    r = s.replace("-", "beau"+hyphen)   \
+        .replace(".", "be"+hyphen)      \
+        .replace("/", "")               \
         .replace(hyphen+" ", " ")
     return re.sub(hyphen+"$", "", r)
 
 def from_beaud(s, hyphen="-"):
     """Translate from beaud to morse"""
     return s.lower()            \
-        .replace(hyphen, "")       \
+        .replace(hyphen, "")    \
         .replace("beau", "-")   \
         .replace("be", ".")     \
 
